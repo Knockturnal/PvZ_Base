@@ -13,8 +13,9 @@ public class Enemy : MonoBehaviour
 		transform.position += Vector3.left * Time.deltaTime;
 	}
 
-	private void OnDestroy()
+	private void Kill()	//Isn't called from anywhere but shows how you could get money when the enemy dies
 	{
 		BuildController.control.AddMoney(cashOnKill);
+		Destroy(gameObject);
 	}
 }
